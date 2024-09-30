@@ -43,6 +43,7 @@ body {
   font-family: "Anek Devanagari", sans-serif;
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
+  overflow: hidden;
 }
 
 html::-webkit-scrollbar {
@@ -477,7 +478,8 @@ span {
 }
 
 .project-box img {
-  width: 100%;
+ width: 100%;
+ object-fit: cover;
   transition: 0.5s ease;
 }
 

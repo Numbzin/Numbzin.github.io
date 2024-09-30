@@ -4,44 +4,17 @@ let navbar = document.querySelector(".navbar");
 let sections = document.querySelectorAll("section");
 let navLinks = document.querySelectorAll("header nav a");
 
-window.onscroll = () => {
-  sections.forEach((sec) => {
-    let top = window.scrollY;
-    let offset = sec.offsetTop - 150;
-    let height = sec.offsetHeight;
-    let id = sec.getAttribute("id");
-
-    if (top >= offset && top < offset + height) {
-      navLinks.forEach((links) => {
-        links.classList.remove("active");
-        document
-          .querySelector("header nav a[href*='" + id + "']")
-          .classList.add("active");
-      });
-    }
+const setActiveLink = (id) => {
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
   });
+  const activeLink = document.querySelector(`header nav a[href*='${id}']`);
+  if (activeLink) activeLink.classList.add("active");
 };
-
-menuIcon.onclick = () => {
-  menuIcon.classList.toggle("bx-x");
-  navbar.classList.toggle("active");
-};
-
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-
-    document.querySelector(this.getAttribute("href")).scrollIntoView({
-      behavior: "smooth",
-    });
-  });
-});
-
-const skillsSection = document.querySelector(".skills");
-const bars = document.querySelectorAll(".bar");
 
 const showSkills = () => {
   const triggerBottom = (window.innerHeight / 5) * 4;
+  const bars = document.querySelectorAll(".bar");
   bars.forEach((bar) => {
     const barTop = bar.getBoundingClientRect().top;
     if (barTop < triggerBottom) {
@@ -52,52 +25,36 @@ const showSkills = () => {
   });
 };
 
-window.addEventListener("scroll", showSkills);
+const revealElements = document.querySelectorAll(".reveal");
+const reveal = () => {
+  revealElements.forEach((element) => {
+    const elementTop = element.getBoundingClientRect().top;
+    const elementVisible = 150;
+    if (elementTop < window.innerHeight - elementVisible) {
+      element.classList.add("active");
+    }
+  });
+};
 
-// Form validation and submission
-const contactForm = document.getElementById("contact-form");
+const validateForm = (name, email, phone, message) => {
+  return {
+    isValid: !!(name && email && phone && message),
+    emailValid: isValidEmail(email),
+    phoneValid: isValidPhone(phone),
+  };
+};
 
-contactForm.addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  const name = document.querySelector('input[name="name"]').value.trim();
-  const email = document.querySelector('input[name="email"]').value.trim();
-  const phone = document.querySelector('input[name="phone"]').value.trim();
-  const subject = document.querySelector('input[name="subject"]').value.trim();
-  const message = document
-    .querySelector('textarea[name="message"]')
-    .value.trim();
-
-  if (!name || !email || !phone || !message) {
-    showMessage("Please fill in all required fields.", "error");
-    return;
-  }
-
-  if (!isValidEmail(email)) {
-    showMessage("Please enter a valid email address.", "error");
-    return;
-  }
-
-  if (!isValidPhone(phone)) {
-    showMessage("Please enter a valid phone number.", "error");
-    return;
-  }
-
-  // If all validations pass, submit the form using AJAX
-  submitForm();
-});
-
-function isValidEmail(email) {
+const isValidEmail = (email) => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
-}
+};
 
-function isValidPhone(phone) {
-  const phoneRegex = /^\d{10,}$/; // Assumes at least 10 digits
+const isValidPhone = (phone) => {
+  const phoneRegex = /^\d{10,}$/; 
   return phoneRegex.test(phone);
-}
+};
 
-function submitForm() {
+const submitForm = () => {
   const form = document.getElementById("contact-form");
   const formData = new FormData(form);
 
@@ -120,9 +77,9 @@ function submitForm() {
   .catch(error => {
     showMessage("Oops! There was a problem submitting your form. Please try again.", "error");
   });
-}
+};
 
-function showMessage(message, type) {
+const showMessage = (message, type) => {
   const messageElement = document.createElement("div");
   messageElement.textContent = message;
   messageElement.className = `message ${type}`;
@@ -133,107 +90,135 @@ function showMessage(message, type) {
   setTimeout(() => {
     messageElement.remove();
   }, 5000);
-}
+};
 
-// Theme toggle
-const themeToggle = document.getElementById("theme-toggle");
-const body = document.body;
-
-themeToggle.addEventListener("click", () => {
-  body.classList.toggle("light-mode");
-  updateThemeIcon();
-  updateProjectTextColor(); // Adicionando a função para mudar a cor do texto
-});
-
-function updateThemeIcon() {
-  const icon = themeToggle.querySelector("i");
-  if (body.classList.contains("light-mode")) {
-    icon.classList.remove("fa-moon");
-    icon.classList.add("fa-sun");
-  } else {
-    icon.classList.remove("fa-sun");
-    icon.classList.add("fa-moon");
+// Throttle function for scroll events
+function throttle(func, limit) {
+  let lastFunc;
+  let lastRan;
+  return function() {
+    const context = this;
+    const args = arguments;
+    if (!lastRan) {
+      func.apply(context, args);
+      lastRan = Date.now();
+    } else {
+      clearTimeout(lastFunc);
+      lastFunc = setTimeout(function() {
+        if ((Date.now() - lastRan) >= limit) {
+          func.apply(context, args);
+          lastRan = Date.now();
+        }
+      }, limit - (Date.now() - lastRan));
+    }
   }
 }
 
-function updateProjectTextColor() {
-  projectTexts.forEach((text) => {
-    if (body.classList.contains("light-mode")) {
-      text.style.color = "#000";
-    } else {
-      text.style.color = "#fff";
-    }
+document.addEventListener('DOMContentLoaded', () => {
+  menuIcon.addEventListener('click', () => {
+    menuIcon.classList.toggle("bx-x");
+    navbar.classList.toggle("active");
   });
-}
 
-// Initialize theme based on user preference
-if (
-  window.matchMedia &&
-  window.matchMedia("(prefers-color-scheme: light)").matches
-) {
-  body.classList.add("light-mode");
-  updateThemeIcon();
-}
+  window.onscroll = () => {
+    let top = window.scrollY;
+    sections.forEach((sec) => {
+      let offset = sec.offsetTop - 150;
+      let height = sec.offsetHeight;
+      let id = sec.getAttribute("id");
 
-// Lazy loading images
-document.addEventListener("DOMContentLoaded", function () {
-  var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+      if (top >= offset && top < offset + height) {
+        setActiveLink(id);
+      }
+    });
 
-  if ("IntersectionObserver" in window) {
-    let lazyImageObserver = new IntersectionObserver(function (
-      entries,
-      observer
-    ) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          let lazyImage = entry.target;
-          lazyImage.src = lazyImage.dataset.src;
-          lazyImage.classList.remove("lazy");
-          lazyImageObserver.unobserve(lazyImage);
-        }
+    showSkills();
+    reveal();
+  };
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
       });
     });
+  });
 
-    lazyImages.forEach(function (lazyImage) {
-      lazyImageObserver.observe(lazyImage);
-    });
-  } else {
-    // Fallback for browsers that don't support IntersectionObserver
-    let active = false;
+  // Typing effect
+  const texts = ["Front-End Developer", "Student", "Video Editor", "Autodidact"];
+  const typingElement = document.querySelector(".typing-text span");
+  let textIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
 
-    const lazyLoad = function () {
-      if (active === false) {
-        active = true;
+  function typeEffect() {
+    const currentText = texts[textIndex];
+    const typingSpeed = isDeleting ? 50 : 150;
 
-        setTimeout(function () {
-          lazyImages.forEach(function (lazyImage) {
-            if (
-              lazyImage.getBoundingClientRect().top <= window.innerHeight &&
-              lazyImage.getBoundingClientRect().bottom >= 0 &&
-              getComputedStyle(lazyImage).display !== "none"
-            ) {
-              lazyImage.src = lazyImage.dataset.src;
-              lazyImage.classList.remove("lazy");
-
-              lazyImages = lazyImages.filter(function (image) {
-                return image !== lazyImage;
-              });
-
-              if (lazyImages.length === 0) {
-                document.removeEventListener("scroll", lazyLoad);
-                window.removeEventListener("resize", lazyLoad);
-                window.removeEventListener("orientationchange", lazyLoad);
-              }
-            }
-          });
-
-          active = false;
-        }, 200);
+    if (!isDeleting && charIndex < currentText.length) {
+      typingElement.textContent += currentText.charAt(charIndex);
+      charIndex++;
+    } else if (isDeleting && charIndex > 0) {
+      typingElement.textContent = currentText.substring(0, charIndex - 1);
+      charIndex--;
+    } else {
+      isDeleting = !isDeleting;
+      if (!isDeleting) {
+        textIndex = (textIndex + 1) % texts.length;
       }
-    };
+    }
 
-    document.addEventListener("scroll", lazyLoad);
-    window.addEventListener("resize", lazyLoad);
-    window.addEventListener("orientationchange", lazyLoad);
+    setTimeout(typeEffect, typingSpeed);
   }
+
+  typeEffect();
+
+  // Theme toggle
+  const themeToggle = document.getElementById("theme-toggle");
+  const body = document.body;
+
+  themeToggle.addEventListener("click", () => {
+    body.classList.toggle("light-mode");
+    updateThemeIcon();
+  });
+
+  function updateThemeIcon() {
+    const icon = themeToggle.querySelector("i");
+    icon.classList.toggle("fa-moon");
+    icon.classList.toggle("fa-sun");
+  }
+
+  // Form validation and submission
+  const contactForm = document.getElementById("contact-form");
+
+  contactForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.querySelector('input[name="name"]').value.trim();
+    const email = document.querySelector('input[name="email"]').value.trim();
+    const phone = document.querySelector('input[name="phone"]').value.trim();
+    const subject = document.querySelector('input[name="subject"]').value.trim();
+    const message = document.querySelector('textarea[name="message"]').value.trim();
+
+    const { isValid, emailValid, phoneValid } = validateForm(name, email, phone, message);
+
+    if (!isValid) {
+      showMessage("Please fill in all required fields.", "error");
+      return;
+    }
+
+    if (!emailValid) {
+      showMessage("Please enter a valid email address.", "error");
+      return;
+    }
+
+    if (!phoneValid) {
+      showMessage("Please enter a valid phone number.", "error");
+      return;
+    }
+
+    // If all validations pass, submit the form
+    submitForm();
+  });
 });
