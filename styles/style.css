@@ -533,7 +533,7 @@ span {
 
 .footer .social {
   text-align: center;
-  padding-bottom: 25px;
+  padding-bottom: 20px;
   color: var(--text-color);
 }
 
@@ -544,8 +544,8 @@ span {
   width: 42px;
   height: 42px;
   line-height: 50px;
+  padding-left: 1.3px;
   display: inline-block;
-  text-align: center;
   border-radius: 50%;
   margin: 0 10px;
   transition: 0.3s ease;
