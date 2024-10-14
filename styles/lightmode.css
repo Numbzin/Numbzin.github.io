@@ -1,0 +1,14 @@
+body.light-mode {
+    --bg-color: #ffffff;
+    --second-bg-color: #f0f0f0;
+    --text-color: #333;
+    --main-color: #7b4bb7;
+  }
+  
+  body.light-mode .project-box .project-layer {
+    color: transparent;
+  }
+  
+  body.light-mode .project-box:hover .project-layer {
+    color: #fff;
+  }
