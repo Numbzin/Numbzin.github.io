@@ -1,8 +1,7 @@
 const OFFSET = 150;
 const TYPING_SPEED = 150;
-const DELETING_SPEED = 50;
+const DELETING_SPEED = 55;
 
-// Selecting DOM elements
 const menuIcon = document.querySelector("#menu-icon");
 const navbar = document.querySelector(".navbar");
 const sections = document.querySelectorAll("section");
@@ -11,7 +10,6 @@ const contactForm = document.getElementById("contact-form");
 const themeToggle = document.getElementById("theme-toggle");
 const body = document.body;
 
-// Function to set the active link in the navigation
 const setActiveLink = (id) => {
   navLinks.forEach((link) => {
     link.classList.remove("active");
@@ -20,7 +18,6 @@ const setActiveLink = (id) => {
   if (activeLink) activeLink.classList.add("active");
 };
 
-// Function to validate the form
 const validateForm = (name, email, phone, message) => {
   return {
     isValid: !!(name && email && phone && message),
@@ -29,19 +26,16 @@ const validateForm = (name, email, phone, message) => {
   };
 };
 
-// Function to validate email
 const isValidEmail = (email) => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
 };
 
-// Function to validate phone
 const isValidPhone = (phone) => {
   const phoneRegex = /^\d{10,}$/;
   return phoneRegex.test(phone);
 };
 
-// Function to submit the form
 const submitForm = async () => {
   const formData = new FormData(contactForm);
 

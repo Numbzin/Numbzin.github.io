@@ -149,12 +149,13 @@ span {
   border: 2px solid var(--main-color);
   letter-spacing: 0.1rem;
   font-weight: 600;
+  font-size: 14px;
   transition: 0.3s ease;
   cursor: pointer;
 }
 
 .btn:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
   background-color: var(--main-color);
   color: var(--text-color);
   box-shadow: 0 0 25px var(--main-color);
