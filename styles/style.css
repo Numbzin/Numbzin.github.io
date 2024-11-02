@@ -411,9 +411,10 @@ span {
 }
 
 .projects-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  /* display: grid; */
+  columns: 550px;
+  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+  gap: 4rem;
   margin-top: 3rem;
 }
 
@@ -426,13 +427,14 @@ span {
 }
 
 .project-box img {
- width: 100%;
- object-fit: cover;
+  width: 100%;
+  object-fit: cover;
   transition: 0.5s ease;
 }
 
 .project-box:hover img {
   transform: scale(1.1);
+  filter: blur(2px);
 }
 
 .project-box .project-layer {
