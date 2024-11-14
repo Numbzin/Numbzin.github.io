@@ -484,6 +484,10 @@ span {
   color: var(--second-bg-color);
 }
 
+.port-project {
+  margin-top: 25px;
+}
+
 /* contact */
 .contact {
   background: var(--second-bg-color);
@@ -597,7 +601,7 @@ span {
   bottom: 20px;
   right: 20px;
   background-color: var(--main-color);
-  color: var(--text-color);
+  color: var(--bg-color);
   border: none;
   border-radius: 50%;
   width: 50px;
@@ -613,6 +617,11 @@ span {
 }
 
 /* Form message styles */
+
+.error-message {
+  font-size: 16px;
+}
+
 .message {
   padding: 1rem;
   margin-bottom: 1rem;
@@ -632,4 +641,4 @@ span {
   background-color: #f8d7da;
   color: #721c24;
   border: 1px solid #f5c6cb;
-}
+} 

@@ -1,14 +1,25 @@
+body.dark-mode {
+  --bg-color: #121212;
+  --second-bg-color: #1f1f1f;
+  --text-color: #e0e0e0;
+  --main-color: #9a6bda;
+}
+
 body.light-mode {
-    --bg-color: #ffffff;
-    --second-bg-color: #f0f0f0;
-    --text-color: #333;
-    --main-color: #7b4bb7;
-  }
-  
-  body.light-mode .project-box .project-layer {
-    color: transparent;
-  }
-  
-  body.light-mode .project-box:hover .project-layer {
-    color: #fff;
-  }
+  --bg-color: #fafafa;
+  --second-bg-color: #eaeaea;
+  --text-color: #212121;
+  --main-color: #6b4b9a;
+}
+
+body.light-mode .project-box .project-layer {
+  color: transparent;
+}
+
+body.light-mode .project-box:hover .project-layer {
+  color: #fafafa;
+}
+
+#theme-toggle {
+  padding-top: 9px;
+}
