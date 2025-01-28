@@ -304,9 +304,77 @@ const EventHandlers = {
   },
 };
 
+let TRANSLATIONS = {};
+
+async function loadTranslations() {
+  try {
+    const response = await fetch("lang.json");
+    TRANSLATIONS = await response.json();
+    LanguageController.init(); // Inicializa o controlador de idioma após carregar as traduções
+  } catch (error) {
+    console.error("Erro ao carregar traduções:", error);
+  }
+}
+
+const LanguageController = {
+  currentLanguage: "en", // Idioma padrão
+
+  init() {
+    this.translateButton = document.getElementById("translate-button");
+    this.languageText = document.getElementById("language-text");
+
+    if (this.translateButton) {
+      this.translateButton.addEventListener("click", () =>
+        this.toggleLanguage()
+      );
+    }
+
+    this.applyLanguage(this.currentLanguage);
+  },
+
+  toggleLanguage() {
+    this.currentLanguage = this.currentLanguage === "en" ? "pt" : "en";
+    this.applyLanguage(this.currentLanguage);
+  },
+
+  applyLanguage(language) {
+    const translations = TRANSLATIONS[language];
+
+    // Atualiza os textos estáticos
+    document.querySelectorAll("[data-translate]").forEach((element) => {
+      const key = element.getAttribute("data-translate");
+      if (translations[key]) {
+        if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
+          element.placeholder = translations[key]; // Atualiza placeholders
+        } else if (element.tagName === "INPUT" && element.type === "submit") {
+          element.value = translations[key]; // Atualiza o valor do botão
+        } else {
+          element.textContent = translations[key]; // Atualiza outros textos
+        }
+      }
+    });
+
+    // Atualiza o texto do botão de tradução
+    if (this.languageText) {
+      this.languageText.textContent = language === "en" ? "PT-BR" : "EN";
+    }
+
+    // Atualiza os textos dinâmicos (como o efeito de digitação)
+    if (DOM.typingElement) {
+      CONFIG.TYPING.TEXTS = translations.typingTexts;
+      AnimationController.typingState.textIndex = 0;
+      AnimationController.typingState.charIndex = 0;
+      DOM.typingElement.textContent = "";
+    }
+  },
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   DOM.init();
   EventHandlers.init();
   AnimationController.startTypingEffect();
   ThemeController.init();
+  loadTranslations(); // Carrega as traduções e inicializa o controlador de idioma
 });
+
+document.getElementById("year").innerHTML = new Date().getFullYear();

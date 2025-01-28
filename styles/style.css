@@ -641,4 +641,51 @@ span {
   background-color: #f8d7da;
   color: #721c24;
   border: 1px solid #f5c6cb;
-} 
+}
+
+#year {
+  color: var(--text-color);
+}
+
+.sup {
+  color: var(--text-color);
+}
+
+.my {
+  color: var(--text-color);
+}
+
+.myProjects {
+  color: var(--text-color);
+}
+
+.contactme {
+  color: var(--text-color);
+}
+
+.footerRights {
+  color: var(--text-color);
+}
+
+#language-text {
+  font-family: "Anek Devanagari", sans-serif;
+  font-weight: 900;
+}
+
+#translate-button {
+  position: fixed;
+  bottom: 21px;
+  right: 80px;
+  background-color: var(--main-color);
+  color: white;
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#language-text {
+  color: var(--bg-color);
+  font-size: 15px;
+}
