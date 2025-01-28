@@ -34,7 +34,7 @@ const DOM = {
       phone: document.querySelector('input[name="phone"]'),
       message: document.querySelector('textarea[name="message"]'),
     };
-    this.typingElement = document.querySelector(".typing-text span");
+    this.typingElement = document.querySelector(".typing-text .type-span");
   },
 };
 
@@ -310,14 +310,14 @@ async function loadTranslations() {
   try {
     const response = await fetch("lang.json");
     TRANSLATIONS = await response.json();
-    LanguageController.init(); // Inicializa o controlador de idioma após carregar as traduções
+    LanguageController.init();
   } catch (error) {
     console.error("Erro ao carregar traduções:", error);
   }
 }
 
 const LanguageController = {
-  currentLanguage: "en", // Idioma padrão
+  currentLanguage: "en",
 
   init() {
     this.translateButton = document.getElementById("translate-button");
@@ -340,26 +340,19 @@ const LanguageController = {
   applyLanguage(language) {
     const translations = TRANSLATIONS[language];
 
-    // Atualiza os textos estáticos
     document.querySelectorAll("[data-translate]").forEach((element) => {
       const key = element.getAttribute("data-translate");
       if (translations[key]) {
         if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
-          element.placeholder = translations[key]; // Atualiza placeholders
+          element.placeholder = translations[key];
         } else if (element.tagName === "INPUT" && element.type === "submit") {
-          element.value = translations[key]; // Atualiza o valor do botão
+          element.value = translations[key];
         } else {
-          element.textContent = translations[key]; // Atualiza outros textos
+          element.textContent = translations[key];
         }
       }
     });
 
-    // Atualiza o texto do botão de tradução
-    if (this.languageText) {
-      this.languageText.textContent = language === "en" ? "PT-BR" : "EN";
-    }
-
-    // Atualiza os textos dinâmicos (como o efeito de digitação)
     if (DOM.typingElement) {
       CONFIG.TYPING.TEXTS = translations.typingTexts;
       AnimationController.typingState.textIndex = 0;
@@ -374,7 +367,7 @@ document.addEventListener("DOMContentLoaded", () => {
   EventHandlers.init();
   AnimationController.startTypingEffect();
   ThemeController.init();
-  loadTranslations(); // Carrega as traduções e inicializa o controlador de idioma
+  loadTranslations();
 });
 
 document.getElementById("year").innerHTML = new Date().getFullYear();

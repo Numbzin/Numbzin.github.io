@@ -106,7 +106,8 @@
           data-aos-delay="500"
           class="typing-text"
         >
-          I'm a <span></span><label for="">|</label>
+          <span data-translate="Ima" class="ima">I'm a</span>
+          <span class="type-span"></span><label for="">|</label>
         </h3>
         <p
           data-aos="flip-down"
@@ -552,8 +553,9 @@
     <button id="theme-toggle" aria-label="Toggle dark/light mode">
       <i id="theme-icon" class="fas fa-moon"></i>
     </button>
-    <button id="translate-button" aria-label="Toggle language">
-      <span id="language-text"></span>
+<button id="translate-button" aria-label="Toggle language">
+  <img id="language-flag" src="./assets/images/br.png" alt="PT-BR">
+</button>
     </button>
     <script src="scripts/script.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -563,5 +565,19 @@
         once: true,
       });
     </script>
+    <script>
+  const button = document.getElementById('translate-button');
+  const languageFlag = document.getElementById('language-flag');
+
+  button.addEventListener('click', () => {
+    if (languageFlag.src.includes('br.png')) {
+      languageFlag.src = './assets/images/us.png';
+      languageFlag.alt = 'EN-US';
+    } else {
+      languageFlag.src = './assets/images/br.png'; 
+      languageFlag.alt = 'PT-BR';
+    }
+  });
+</script>
   </body>
 </html>
