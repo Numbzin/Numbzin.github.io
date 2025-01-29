@@ -1,583 +1,315 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NMB</title>
-    <head>
-      <link
-        rel="icon"
-        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>😼</text></svg>"
-      />
-    </head>
-    <link rel="stylesheet" href="styles/main.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
-    />
-
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  </head>
-  <body>
-    <header class="header">
-      <a href="#" class="logo" data-aos="zoom-in" data-aos-duration="1000"
-        >NMB</a
-      >
-
-      <i class="fa-solid fa-bars" id="menu-icon" aria-label="Toggle menu"></i>
-
-      <nav class="navbar">
-        <a
-          href="#home"
-          class="active"
-          data-translate="home"
-          data-aos="fade-up"
-          data-aos-duration="1100"
-          data-aos-delay="100"
-          >Home</a
-        >
-        <a
-          href="#services"
-          data-aos="fade-up"
-          data-aos-duration="1100"
-          data-aos-delay="200"
-          data-translate="services"
-          >Services</a
-        >
-        <a
-          href="#skills"
-          data-aos="fade-up"
-          data-aos-duration="1100"
-          data-aos-delay="300"
-          data-translate="skills"
-          >Skills</a
-        >
-        <a
-          href="#education"
-          data-aos="fade-up"
-          data-aos-duration="1100"
-          data-aos-delay="400"
-          data-translate="education"
-          >Education</a
-        >
-        <a
-          href="#projects"
-          data-aos="fade-up"
-          data-aos-duration="1100"
-          data-aos-delay="500"
-          data-translate="projects"
-          >Projects</a
-        >
-        <a
-          href="#contact"
-          data-aos="fade-up"
-          data-aos-duration="1100"
-          data-aos-delay="600"
-          data-translate="contact"
-          >Contact</a
-        >
-      </nav>
-    </header>
-
-    <section class="home" id="home">
-      <div class="home-img" data-aos="zoom-in" data-aos-duration="1500">
-        <img
-          src="assets/images/nmb.webp"
-          alt="Profile picture"
-          loading="lazy"
-        />
-      </div>
-      <div class="home-content">
-        <h1 data-aos="fade-left" data-aos-duration="1500" data-aos-delay="300">
-          <span data-translate="supMessage" class="sup"> Sup, It's</span>
-          <span>NMB</span>
-        </h1>
-        <h3
-          data-aos="fade-right"
-          data-aos-duration="1500"
-          data-aos-delay="500"
-          class="typing-text"
-        >
-          <span data-translate="Ima" class="ima">I'm a</span>
-          <span class="type-span"></span><label for="">|</label>
-        </h3>
-        <p
-          data-aos="flip-down"
-          data-aos-duration="1500"
-          data-aos-delay="700"
-          data-translate="aboutMe"
-        >
-          My name is Fernando, I'm 22 years old, and I'm studying Full Stack
-          Java development at SENAC. Passionate about technology, I'm always
-          seeking to learn more and create amazing projects.
-        </p>
-
-        <div
-          class="social-icon"
-          data-aos="fade-up"
-          data-aos-duration="1500"
-          data-aos-delay="900"
-        >
-          <a
-            href="https://www.linkedin.com/in/numbzin/"
-            target="_blank"
-            aria-label="LinkedIn"
-          >
-            <i
-              data-aos="fade-up"
-              data-aos-duration="1500"
-              data-aos-delay="900"
-              class="fa-brands fa-linkedin"
-            ></i
-          ></a>
-          <a href="https://x.com/numbzin" target="_blank" aria-label="Twitter">
-            <i
-              data-aos="fade-up"
-              data-aos-duration="1500"
-              data-aos-delay="1000"
-              class="fa-brands fa-x-twitter"
-            ></i
-          ></a>
-          <a
-            href="https://Github.com/Numbzin"
-            target="_blank"
-            aria-label="GitHub"
-          >
-            <i
-              data-aos="fade-up"
-              data-aos-duration="1500"
-              data-aos-delay="1100"
-              class="fa-brands fa-github"
-            ></i
-          ></a>
-          <a
-            href="https://www.instagram.com/numbzin/"
-            target="_blank"
-            aria-label="Instagram"
-          >
-            <i
-              data-aos="fade-up"
-              data-aos-duration="1500"
-              data-aos-delay="1200"
-              class="fa-brands fa-instagram"
-            ></i
-          ></a>
-        </div>
-        <div
-          class="button"
-          data-aos="fade-up"
-          data-aos-duration="1500"
-          data-aos-delay="800"
-        >
-          <a href="#contact" data-translate="hireMe" class="btn">Hire Me</a>
-        </div>
-      </div>
-    </section>
-    <section
-      class="services"
-      id="services"
-      data-aos="fade-up"
-      data-aos-duration="1000"
-    >
-      <h2 data-translate="services" class="heading">Services</h2>
-      <div class="services-container">
-        <div class="services-box" data-aos="fade-up" data-aos-delay="200">
-          <div class="services-info">
-            <h4 data-translate="webDevelopment">Web Development</h4>
-            <p data-translate="webDevelopmentDescription">
-              Creating responsive and dynamic websites using modern technologies
-              like HTML, CSS, and JS.
-            </p>
-          </div>
-        </div>
-        <div class="services-box" data-aos="fade-up" data-aos-delay="350">
-          <div class="services-info">
-            <h4 data-translate="videoEditing">Video Editing</h4>
-            <p data-translate="videoEditingDescription">
-              Professional video editing for various media formats, including
-              social media content and short films.
-            </p>
-          </div>
-        </div>
-        <div class="services-box" data-aos="fade-up" data-aos-delay="500">
-          <div class="services-info">
-            <h4 data-translate="uiUxDesign">UI/UX Design</h4>
-            <p data-translate="uiUxDesignDescription">
-              Designing intuitive and visually appealing user interfaces for web
-              and mobile applications.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section
-      class="skills"
-      id="skills"
-      data-aos="fade-up"
-      data-aos-duration="1000"
-    >
-      <h2 data-translate="skills" class="heading">Skills</h2>
-      <div class="container">
-        <div class="row" id="skillsContainer">
-          <div class="bar" data-aos="fade-right" data-aos-delay="200">
-            <div class="info">
-              <i class="fa-brands fa-html5"></i>
-              <p>HTML</p>
-            </div>
-          </div>
-          <div class="bar" data-aos="fade-right" data-aos-delay="300">
-            <div class="info">
-              <i class="fa-brands fa-css3-alt"></i>
-              <p>CSS</p>
-            </div>
-          </div>
-          <div class="bar" data-aos="fade-right" data-aos-delay="400">
-            <div class="info">
-              <i class="fa-brands fa-js"></i>
-              <p>JavaScript</p>
-            </div>
-          </div>
-          <div class="bar" data-aos="fade-right" data-aos-delay="500">
-            <div class="info">
-              <i class="fa-brands fa-bootstrap"></i>
-              <p>BootStrap</p>
-            </div>
-          </div>
-          <div class="bar" data-aos="fade-right" data-aos-delay="600">
-            <div class="info">
-              <i class="fa-brands fa-git-alt"></i>
-              <p>Git</p>
-            </div>
-          </div>
-          <div class="bar" data-aos="fade-right" data-aos-delay="700">
-            <div class="info">
-              <i class="fa-brands fa-vuejs"></i>
-              <p>Vue</p>
-            </div>
-          </div>
-          <div class="bar" data-aos="fade-right" data-aos-delay="800">
-            <div class="info">
-              <i class="fa-brands fa-node"></i>
-              <p>NodeJS</p>
-            </div>
-          </div>
-          <div class="bar" data-aos="fade-right" data-aos-delay="900">
-            <div class="info">
-              <i class="devicon-typescript-plain"></i>
-
-              <p>TypeScript</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section
-      class="education"
-      id="education"
-      data-aos="fade-up"
-      data-aos-duration="1000"
-    >
-      <h2 class="heading">
-        <span data-translate="my" class="my">My</span
-        ><span data-translate="education">Education</span>
-      </h2>
-      <div class="timeline">
-        <div class="container right" data-aos="fade-left" data-aos-delay="200">
-          <div class="content">
-            <div class="tag">
-              <h2 data-translate="fullStackJava">
-                Full Stack Java Development
-              </h2>
-            </div>
-            <div class="desc">
-              <p data-translate="fullStackJavaDescription">
-                Currently studying Full Stack Java Development at SENAC,
-                focusing on web technologies, databases, and software
-                architecture.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="container left" data-aos="fade-right" data-aos-delay="450">
-          <div class="content">
-            <div class="tag">
-              <h2 data-translate="highSchool">High School</h2>
-            </div>
-            <div class="desc">
-              <p data-translate="highSchoolDescription">
-                I finished high school through EJA BRASIL, but before that, I
-                had already started studying programming on the side, I started
-                with books.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="container right" data-aos="fade-left" data-aos-delay="600">
-          <div class="content">
-            <div class="tag">
-              <h2 data-translate="selfLearning">Self-Learning</h2>
-            </div>
-            <div class="desc">
-              <p data-translate="selfLearningDescription">
-                Continuously expanding my knowledge through online courses,
-                coding challenges, books and personal projects in web
-                development and UI/UX design.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section
-      class="projects"
-      id="projects"
-      data-aos="fade-up"
-      data-aos-duration="1000"
-    >
-      <h2 class="heading">
-        <span class="myProjects" data-translate="myProjects">My</span>
-        <span data-translate="projects">Projects</span>
-      </h2>
-
-      <div class="projects-container">
-        <div class="project-box" data-aos="fade-up" data-aos-delay="200">
-          <img
-            src="assets/images/devwest.webp"
-            alt="photo of a 3D can design"
-            loading="lazy"
-          />
-          <div class="project-layer">
-            <h4 data-translate="devWest">DevWest (In progress)</h4>
-            <p data-translate="devWestDescription">
-              A platform connecting early-career developers with real
-              opportunities in nonprofit projects, helping them build skills and
-              portfolios while supporting social impact initiatives.
-            </p>
-            <a
-              href="https://www.devwest.com.br"
-              aria-label="View Project"
-              target="_blank"
-              ><i class="fas fa-external-link-alt"></i
-            ></a>
-          </div>
-        </div>
-
-        <div class="projects-container">
-          <div class="project-box" data-aos="fade-up" data-aos-delay="200">
-            <img
-              src="assets/images/phone.webp"
-              alt="Phone Page project mockup"
-              loading="lazy"
-            />
-            <div class="project-layer">
-              <h4 data-translate="phonePage">Phone Page (In Progress)</h4>
-              <p data-translate="phonePageDescription">
-                A responsive platform in development, potentially expanding into
-                a full e-commerce site for mobile devices, with a modern design
-                and user-friendly layout.
-              </p>
-              <a
-                href="https://phone-page.vercel.app/"
-                aria-label="View Phone Page Project"
-                target="_blank"
-                ><i class="fas fa-external-link-alt"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="projects-container">
-          <div class="project-box" data-aos="fade-up" data-aos-delay="200">
-            <img
-              src="assets/images/barberss.webp"
-              alt="Barber's Cuts 3D design mockup"
-              loading="lazy"
-            />
-            <div class="project-layer">
-              <h4 data-translate="barbersCuts">Barber's Cuts (In Progress)</h4>
-              <p data-translate="barbersCutsDescription">
-                A white-label barbershop platform currently under development.
-                It features appointment scheduling, user login, and database
-                integration.
-              </p>
-              <a
-                href="https://barberscuts.vercel.app/"
-                aria-label="View Barber's Cuts Project"
-                target="_blank"
-                ><i class="fas fa-external-link-alt"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="projects-container">
-          <div class="project-box" data-aos="fade-up" data-aos-delay="200">
-            <img
-              src="assets/images/latinha.webp"
-              alt="photo of a 3D can design"
-              loading="lazy"
-            />
-            <div class="project-layer">
-              <h4 data-translate="canEffect">3D Can Effect With CSS</h4>
-              <p data-translate="canEffectDescription">
-                Through the LUN DEV (YT) channel I learned how to make this 3D
-                effect, using just CSS!!.
-              </p>
-              <a
-                href="https://latinha3d-numbzins-projects.vercel.app/"
-                aria-label="View Project"
-                target="_blank"
-                ><i class="fas fa-external-link-alt"></i
-              ></a>
-            </div>
-          </div>
-
-          <div
-            class="project-box port-project"
-            data-aos="fade-up"
-            data-aos-delay="600"
-          >
-            <img
-              src="assets/images/port.webp"
-              alt="portfolio photo"
-              loading="lazy"
-            />
-            <div class="project-layer">
-              <h4 data-translate="portfolioWebsite">Portfolio Website</h4>
-              <p data-translate="portfolioWebsiteDescription">
-                Designed and developed a responsive portfolio website using
-                HTML, CSS, and JavaScript.
-              </p>
-              <a
-                href="Numbzin.github.io"
-                aria-label="View Project"
-                target="_blank"
-                ><i class="fas fa-external-link-alt"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section
-      class="contact"
-      id="contact"
-      data-aos="fade-up"
-      data-aos-duration="1000"
-    >
-      <h2 class="heading">
-        <span class="contactme" data-translate="contactMee">Contact</span>
-        <span data-translate="contactMe">Me</span>
-      </h2>
-      <form
-        action="https://formspree.io/f/myzgvzlv"
-        method="POST"
-        data-aos="fade-up"
-        data-aos-delay="200"
-        id="contact-form"
-      >
-        <div class="input-box">
-          <input type="text" name="name" placeholder="Name" required />
-          <span id="name-error" class="error-message"></span>
-          <input type="email" name="email" placeholder="Email" required />
-          <span id="email-error" class="error-message"></span>
-          <input type="tel" name="phone" placeholder="Phone Number" required />
-          <span id="phone-error" class="error-message"></span>
-          <input type="text" name="subject" placeholder="Subject" />
-        </div>
-        <textarea
-          name="message"
-          cols="30"
-          rows="10"
-          placeholder="Your Message"
-          data-translate="messagePlaceholder"
-          required
-        ></textarea>
-        <span id="message-error" class="error-message"></span>
-        <button
-          data-translate="sendMessage"
-          type="submit"
-          data
-          value="Send Message"
-          class="btn"
-        >
-          Send Message
-        </button>
-      </form>
-    </section>
-
-    <footer class="footer">
-      <div class="social">
-        <a
-          href="https://www.linkedin.com/in/numbzin/"
-          target="_blank"
-          aria-label="LinkedIn"
-          ><i class="fa-brands fa-linkedin"></i
-        ></a>
-        <a href="https://x.com/numbzin" target="_blank" aria-label="Twitter"
-          ><i class="fa-brands fa-x-twitter"></i
-        ></a>
-        <a href="https://Github.com/Numbzin" target="_blank" aria-label="GitHub"
-          ><i class="fa-brands fa-github"></i
-        ></a>
-        <a
-          href="https://www.instagram.com/numbzin/"
-          target="_blank"
-          aria-label="Instagram"
-          ><i class="fa-brands fa-instagram"></i
-        ></a>
-      </div>
-      <ul class="list">
-        <li><a data-translate="services" href="#services">Services</a></li>
-        <li><a data-translate="skills" href="#skills">Skills</a></li>
-        <li><a data-translate="contact" href="#contact">Contact</a></li>
-      </ul>
-      <p class="copy">
-        &copy; <span id="year"></span> NMB |
-        <span class="footerRights" data-translate="footerRights">
-          All Rights Reserved.
-        </span>
-      </p>
-    </footer>
-    <button id="theme-toggle" aria-label="Toggle dark/light mode">
-      <i id="theme-icon" class="fas fa-moon"></i>
-    </button>
-<button id="translate-button" aria-label="Toggle language">
-  <img id="language-flag" src="./assets/images/br.png" alt="PT-BR">
+<!doctypehtml>
+<html lang=pt-br>
+<head>
+<meta charset=UTF-8>
+<meta content="width=device-width,initial-scale=1"name=viewport>
+<title>NMB</title>
+<head>
+<link href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>😼</text></svg>"rel=icon>
+</head>
+<link href=styles/main.css rel=stylesheet>
+<link href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css rel=stylesheet crossorigin=anonymous integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="media=print onload='this.media="all"'referrerpolicy=no-referrer>
+<link href=https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css rel=stylesheet>
+<link href=https://unpkg.com/aos@next/dist/aos.css rel=stylesheet>
+</head>
+<body>
+<header class=header>
+<a href=# data-aos=zoom-in data-aos-duration=1000 class=logo>NMB</a>
+<i class="fa-bars fa-solid"id=menu-icon aria-label="Toggle menu"></i>
+<nav class=navbar>
+<a href=#home data-translate=home data-aos=fade-up data-aos-delay=100 data-aos-duration=1100 class=active>Home</a>
+<a href=#services data-translate=services data-aos=fade-up data-aos-delay=200 data-aos-duration=1100>Services</a>
+<a href=#skills data-translate=skills data-aos=fade-up data-aos-delay=300 data-aos-duration=1100>Skills</a>
+<a href=#education data-translate=education data-aos=fade-up data-aos-delay=400 data-aos-duration=1100>Education</a>
+<a href=#projects data-translate=projects data-aos=fade-up data-aos-delay=500 data-aos-duration=1100>Projects</a>
+<a href=#contact data-translate=contact data-aos=fade-up data-aos-delay=600 data-aos-duration=1100>Contact</a>
+</nav>
+</header>
+<section class=home id=home>
+<div class=home-img data-aos=zoom-in data-aos-duration=1500>
+<img alt="Profile picture"src=assets/images/nmb.webp loading=lazy>
+</div>
+<div class=home-content>
+<h1 data-aos=fade-left data-aos-delay=300 data-aos-duration=1500>
+<span class=sup data-translate=supMessage> Sup, It's</span>
+<span>NMB</span>
+</h1>
+<h3 class=typing-text data-aos=fade-right data-aos-delay=500 data-aos-duration=1500>
+<span class=ima data-translate=Ima>I'm a</span>
+<span class=type-span></span><label for="">|</label>
+</h3>
+<p data-translate=aboutMe data-aos=flip-down data-aos-delay=700 data-aos-duration=1500>
+My name is Fernando, I'm 22 years old, and I'm studying Full Stack Java development at SENAC. Passionate about technology, I'm always seeking to learn more and create amazing projects.
+</p>
+<div class=social-icon data-aos=fade-up data-aos-delay=900 data-aos-duration=1500>
+<a href=https://www.linkedin.com/in/numbzin/ aria-label=LinkedIn target=_blank>
+<i class="fa-brands fa-linkedin"data-aos=fade-up data-aos-delay=900 data-aos-duration=1500></i></a>
+<a href=https://x.com/numbzin aria-label=Twitter target=_blank>
+<i class="fa-brands fa-x-twitter"data-aos=fade-up data-aos-delay=1000 data-aos-duration=1500></i></a>
+<a href=https://Github.com/Numbzin aria-label=GitHub target=_blank>
+<i class="fa-brands fa-github"data-aos=fade-up data-aos-delay=1100 data-aos-duration=1500></i></a>
+<a href=https://www.instagram.com/numbzin/ aria-label=Instagram target=_blank>
+<i class="fa-brands fa-instagram"data-aos=fade-up data-aos-delay=1200 data-aos-duration=1500></i></a>
+</div>
+<div class=button data-aos=fade-up data-aos-delay=800 data-aos-duration=1500>
+<a href=#contact data-translate=hireMe class=btn>Hire Me</a>
+</div>
+</div>
+</section>
+<section class=services id=services data-aos=fade-up data-aos-duration=1000>
+<h2 class=heading data-translate=services>Services</h2>
+<div class=services-container>
+<div class=services-box data-aos=fade-up data-aos-delay=200>
+<div class=services-info>
+<h4 data-translate=webDevelopment>Web Development</h4>
+<p data-translate=webDevelopmentDescription>
+Creating responsive and dynamic websites using modern technologies like HTML, CSS, and JS.
+</p>
+</div>
+</div>
+<div class=services-box data-aos=fade-up data-aos-delay=350>
+<div class=services-info>
+<h4 data-translate=videoEditing>Video Editing</h4>
+<p data-translate=videoEditingDescription>
+Professional video editing for various media formats, including social media content and short films.
+</p>
+</div>
+</div>
+<div class=services-box data-aos=fade-up data-aos-delay=500>
+<div class=services-info>
+<h4 data-translate=uiUxDesign>UI/UX Design</h4>
+<p data-translate=uiUxDesignDescription>
+Designing intuitive and visually appealing user interfaces for web and mobile applications.
+</p>
+</div>
+</div>
+</div>
+</section>
+<section class=skills id=skills data-aos=fade-up data-aos-duration=1000>
+<h2 class=heading data-translate=skills>Skills</h2>
+<div class=container>
+<div class=row id=skillsContainer>
+<div class=bar data-aos=fade-right data-aos-delay=200>
+<div class=info>
+<i class="fa-brands fa-html5"></i>
+<p>HTML</p>
+</div>
+</div>
+<div class=bar data-aos=fade-right data-aos-delay=300>
+<div class=info>
+<i class="fa-brands fa-css3-alt"></i>
+<p>CSS</p>
+</div>
+</div>
+<div class=bar data-aos=fade-right data-aos-delay=400>
+<div class=info>
+<i class="fa-brands fa-js"></i>
+<p>JavaScript</p>
+</div>
+</div>
+<div class=bar data-aos=fade-right data-aos-delay=500>
+<div class=info>
+<i class="fa-brands fa-bootstrap"></i>
+<p>BootStrap</p>
+</div>
+</div>
+<div class=bar data-aos=fade-right data-aos-delay=600>
+<div class=info>
+<i class="fa-brands fa-git-alt"></i>
+<p>Git</p>
+</div>
+</div>
+<div class=bar data-aos=fade-right data-aos-delay=700>
+<div class=info>
+<i class="fa-brands fa-vuejs"></i>
+<p>Vue</p>
+</div>
+</div>
+<div class=bar data-aos=fade-right data-aos-delay=800>
+<div class=info>
+<i class="fa-brands fa-node"></i>
+<p>NodeJS</p>
+</div>
+</div>
+<div class=bar data-aos=fade-right data-aos-delay=900>
+<div class=info>
+<i class=devicon-typescript-plain></i>
+<p>TypeScript</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class=education id=education data-aos=fade-up data-aos-duration=1000>
+<h2 class=heading>
+<span class=my data-translate=my>My</span><span data-translate=education>Education</span>
+</h2>
+<div class=timeline>
+<div class="container right"data-aos=fade-left data-aos-delay=200>
+<div class=content>
+<div class=tag>
+<h2 data-translate=fullStackJava>
+Full Stack Java Development
+</h2>
+</div>
+<div class=desc>
+<p data-translate=fullStackJavaDescription>
+Currently studying Full Stack Java Development at SENAC, focusing on web technologies, databases, and software architecture.
+</p>
+</div>
+</div>
+</div>
+<div class="container left"data-aos=fade-right data-aos-delay=450>
+<div class=content>
+<div class=tag>
+<h2 data-translate=highSchool>High School</h2>
+</div>
+<div class=desc>
+<p data-translate=highSchoolDescription>
+I finished high school through EJA BRASIL, but before that, I had already started studying programming on the side, I started with books.
+</p>
+</div>
+</div>
+</div>
+<div class="container right"data-aos=fade-left data-aos-delay=600>
+<div class=content>
+<div class=tag>
+<h2 data-translate=selfLearning>Self-Learning</h2>
+</div>
+<div class=desc>
+<p data-translate=selfLearningDescription>
+Continuously expanding my knowledge through online courses, coding challenges, books and personal projects in web development and UI/UX design.
+</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class=projects id=projects data-aos=fade-up data-aos-duration=1000>
+<h2 class=heading>
+<span class=myProjects data-translate=myProjects>My</span>
+<span data-translate=projects>Projects</span>
+</h2>
+<div class=projects-container>
+<div class=project-box data-aos=fade-up data-aos-delay=200>
+<img alt="photo of a 3D can design"src=assets/images/devwest.webp loading=lazy>
+<div class=project-layer>
+<h4 data-translate=devWest>DevWest (In progress)</h4>
+<p data-translate=devWestDescription>
+A platform connecting early-career developers with real opportunities in nonprofit projects, helping them build skills and portfolios while supporting social impact initiatives.
+</p>
+<a href=https://www.devwest.com.br aria-label="View Project"target=_blank><i class="fas fa-external-link-alt"></i></a>
+</div>
+</div>
+<div class=projects-container>
+<div class=project-box data-aos=fade-up data-aos-delay=200>
+<img alt="Phone Page project mockup"src=assets/images/phone.webp loading=lazy>
+<div class=project-layer>
+<h4 data-translate=phonePage>Phone Page (In Progress)</h4>
+<p data-translate=phonePageDescription>
+A responsive platform in development, potentially expanding into a full e-commerce site for mobile devices, with a modern design and user-friendly layout.
+</p>
+<a href=https://phone-page.vercel.app/ aria-label="View Phone Page Project"target=_blank><i class="fas fa-external-link-alt"></i></a>
+</div>
+</div>
+</div>
+<div class=projects-container>
+<div class=project-box data-aos=fade-up data-aos-delay=200>
+<img alt="Barber's Cuts 3D design mockup"src=assets/images/barberss.webp loading=lazy>
+<div class=project-layer>
+<h4 data-translate=barbersCuts>Barber's Cuts (In Progress)</h4>
+<p data-translate=barbersCutsDescription>
+A white-label barbershop platform currently under development. It features appointment scheduling, user login, and database integration.
+</p>
+<a href=https://barberscuts.vercel.app/ aria-label="View Barber's Cuts Project"target=_blank><i class="fas fa-external-link-alt"></i></a>
+</div>
+</div>
+</div>
+<div class=projects-container>
+<div class=project-box data-aos=fade-up data-aos-delay=200>
+<img alt="photo of a 3D can design"src=assets/images/latinha.webp loading=lazy>
+<div class=project-layer>
+<h4 data-translate=canEffect>3D Can Effect With CSS</h4>
+<p data-translate=canEffectDescription>
+Through the LUN DEV (YT) channel I learned how to make this 3D effect, using just CSS!!.
+</p>
+<a href=https://latinha3d-numbzins-projects.vercel.app/ aria-label="View Project"target=_blank><i class="fas fa-external-link-alt"></i></a>
+</div>
+</div>
+<div class="project-box port-project"data-aos=fade-up data-aos-delay=600>
+<img alt="portfolio photo"src=assets/images/port.webp loading=lazy>
+<div class=project-layer>
+<h4 data-translate=portfolioWebsite>Portfolio Website</h4>
+<p data-translate=portfolioWebsiteDescription>
+Designed and developed a responsive portfolio website using HTML, CSS, and JavaScript.
+</p>
+<a href=Numbzin.github.io aria-label="View Project"target=_blank><i class="fas fa-external-link-alt"></i></a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class=contact id=contact data-aos=fade-up data-aos-duration=1000>
+<h2 class=heading>
+<span class=contactme data-translate=contactMee>Contact</span>
+<span data-translate=contactMe>Me</span>
+</h2>
+<form action=https://formspree.io/f/myzgvzlv data-aos=fade-up data-aos-delay=200 id=contact-form method=POST>
+<div class=input-box>
+<input name=name placeholder=Name required>
+<span class=error-message id=name-error></span>
+<input name=email placeholder=Email required type=email>
+<span class=error-message id=email-error></span>
+<input name=phone placeholder="Phone Number"required type=tel>
+<span class=error-message id=phone-error></span>
+<input name=subject placeholder=Subject>
+</div>
+<textarea cols=30 data-translate=messagePlaceholder name=message placeholder="Your Message"required rows=10></textarea>
+<span class=error-message id=message-error></span>
+<button class=btn data data-translate=sendMessage type=submit value="Send Message">
+Send Message
 </button>
-    </button>
-    <script src="scripts/script.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init({
-        duration: 1000,
-        once: true,
-      });
-    </script>
-    <script>
-  const button = document.getElementById('translate-button');
-  const languageFlag = document.getElementById('language-flag');
+</form>
+</section>
+<footer class=footer>
+<div class=social>
+<a href=https://www.linkedin.com/in/numbzin/ aria-label=LinkedIn target=_blank><i class="fa-brands fa-linkedin"></i></a>
+<a href=https://x.com/numbzin aria-label=Twitter target=_blank><i class="fa-brands fa-x-twitter"></i></a>
+<a href=https://Github.com/Numbzin aria-label=GitHub target=_blank><i class="fa-brands fa-github"></i></a>
+<a href=https://www.instagram.com/numbzin/ aria-label=Instagram target=_blank><i class="fa-brands fa-instagram"></i></a>
+</div>
+<ul class=list>
+<li><a href=#services data-translate=services>Services</a></li>
+<li><a href=#skills data-translate=skills>Skills</a></li>
+<li><a href=#contact data-translate=contact>Contact</a></li>
+</ul>
+<p class=copy>
+© <span id=year></span> NMB |
+<span class=footerRights data-translate=footerRights>
+All Rights Reserved.
+</span>
+</p>
+</footer>
+<button aria-label="Toggle dark/light mode"id=theme-toggle>
+<i class="fas fa-moon"id=theme-icon></i>
+</button>
+<button aria-label="Toggle language"id=translate-button>
+<img alt=PT-BR src=./assets/images/br.png id=language-flag>
+</button>
+<script src=scripts/script.js></script>
+<script src=https://unpkg.com/aos@next/dist/aos.js></script>
+<script>AOS.init({duration:1e3,once:!0})</script>
+<script>
+const button = document.getElementById("translate-button");
+      const languageFlag = document.getElementById("language-flag");
 
-  button.addEventListener('click', () => {
-    if (languageFlag.src.includes('br.png')) {
-      languageFlag.src = './assets/images/us.png';
-      languageFlag.alt = 'EN-US';
-    } else {
-      languageFlag.src = './assets/images/br.png'; 
-      languageFlag.alt = 'PT-BR';
-    }
-  });
+      button.addEventListener("click", () => {
+        if (languageFlag.src.includes("br.png")) {
+          languageFlag.src = "./assets/images/us.png";
+          languageFlag.alt = "EN-US";
+        } else {
+          languageFlag.src = "./assets/images/br.png";
+          languageFlag.alt = "PT-BR";
+        }
+      });
 </script>
-  </body>
-</html>
