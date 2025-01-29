@@ -90,11 +90,11 @@ const CONFIG = {
           this.typingState.charIndex--)
         : ((this.typingState.isDeleting = !n),
           this.typingState.isDeleting ||
-            (this.typingState.textIndex = (t + 1) % e.length));
-      setTimeout(
-        () => requestAnimationFrame(() => this.animateTyping()),
-        n ? CONFIG.ANIMATION.DELETING_SPEED : CONFIG.ANIMATION.TYPING_SPEED
-      );
+            (this.typingState.textIndex = (t + 1) % e.length)),
+        setTimeout(
+          () => requestAnimationFrame(() => this.animateTyping()),
+          n ? CONFIG.ANIMATION.DELETING_SPEED : CONFIG.ANIMATION.TYPING_SPEED
+        );
     },
   },
   FormController = {
