@@ -4,22 +4,18 @@ body.dark-mode {
   --text-color: #e0e0e0;
   --main-color: #9a6bda;
 }
-
 body.light-mode {
   --bg-color: #fafafa;
   --second-bg-color: #eaeaea;
   --text-color: #212121;
   --main-color: #6b4b9a;
 }
-
 body.light-mode .project-box .project-layer {
   color: transparent;
 }
-
 body.light-mode .project-box:hover .project-layer {
   color: #fafafa;
 }
-
 #theme-toggle {
   padding-top: 9px;
 }

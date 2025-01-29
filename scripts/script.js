@@ -216,10 +216,37 @@ const CONFIG = {
           LanguageController.toggleLanguage();
         });
     },
+  },
+  ThemeController = {
+    systemTheme: window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light",
+    init() {
+      this.applyTheme(this.systemTheme),
+        document
+          .getElementById("theme-toggle")
+          .addEventListener("click", () => {
+            let e = document.body.classList.contains("light-mode")
+              ? "dark"
+              : "light";
+            this.applyTheme(e);
+          });
+    },
+    applyTheme(e) {
+      document.body.classList.toggle("dark-mode", "dark" === e),
+        document.body.classList.toggle("light-mode", "light" === e),
+        document
+          .getElementById("theme-icon")
+          .classList.toggle("fa-sun", "light" === e),
+        document
+          .getElementById("theme-icon")
+          .classList.toggle("fa-moon", "dark" === e);
+    },
   };
 document.addEventListener("DOMContentLoaded", () => {
   DOM.init(),
     EventHandlers.init(),
     AnimationController.animateTyping(),
-    LanguageController.loadTranslations();
+    LanguageController.loadTranslations(),
+    ThemeController.init();
 });
