@@ -595,11 +595,12 @@ span {
   color: var(--text-color);
 }
 
-/* Theme toggle button */
+/* Theme toggle and translate button */
+#translate-button,
 #theme-toggle {
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  right: 72px;
   background-color: var(--main-color);
   color: var(--bg-color);
   border: none;
@@ -612,8 +613,19 @@ span {
   z-index: 1000;
 }
 
+#theme-toggle {
+  right: 14px;
+}
+
+#translate-button:hover,
 #theme-toggle:hover {
   transform: scale(1.1);
+}
+
+#translate-button img {
+  width: 25px;
+  margin-left: -2px;
+  margin-top: 12px;
 }
 
 /* Form message styles */
@@ -642,6 +654,8 @@ span {
   color: #721c24;
   border: 1px solid #f5c6cb;
 }
+
+/* translates colors */
 
 #year {
   color: var(--text-color);
@@ -674,30 +688,6 @@ span {
 #language-text {
   font-family: "Anek Devanagari", sans-serif;
   font-weight: 900;
-}
-
-#translate-button {
-  position: fixed;
-  bottom: 21px;
-  right: 80px;
-  background-color: var(--main-color);
-  color: white;
-  border-radius: 50px;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  transition: 0.3s ease;
-  z-index: 1000;
-}
-
-#translate-button:hover {
-  transform: scale(1.1);
-}
-
-#translate-button img {
-  width: 25px;
-  margin-left: -2px;
-  margin-top: 8px;
 }
 
 #language-text {
