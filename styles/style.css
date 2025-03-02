@@ -77,6 +77,10 @@ span {
   color: var(--main-color);
   border-bottom: 3px solid var(--main-color);
 }
+.navbar.active {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+}
 #menu-icon,
 .btn:hover,
 .social-icon a:hover {
@@ -85,6 +89,7 @@ span {
 #menu-icon {
   font-size: 3.6rem;
   display: none;
+  color: var(--main-color);
 }
 section {
   min-height: 100vh;
@@ -478,6 +483,9 @@ section {
   margin: 0 10px;
   transition: 0.3s;
 }
+.social a i {
+  margin-top: 8px;
+}
 .footer .social a:hover {
   transform: scale(1.2) translateY(-5px);
   background: var(--text-color);
@@ -525,10 +533,12 @@ section {
 #theme-toggle {
   right: 14px;
 }
+#theme-icon {
+  margin-bottom: 10px;
+}
 #translate-button img {
   width: 25px;
   margin-left: -2px;
-  margin-top: 12px;
 }
 .message {
   padding: 1rem;
