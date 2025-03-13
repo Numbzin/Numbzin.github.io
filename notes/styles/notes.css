@@ -150,11 +150,11 @@ body {
   line-height: normal;
 }
 
-.date {
-  margin-top: 6rem;
+.post {
+  margin-top: 3rem;
 }
 
-.date h1 {
+.post h1 {
   font-size: 1.9rem;
   font-family: "visitor2";
   color: var(--cor-cinza);
@@ -162,7 +162,7 @@ body {
   font-weight: 400;
 }
 
-.date p {
+.post p {
   text-align: left;
   font-size: 2.3rem;
   margin-top: -15px;
@@ -171,6 +171,102 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+.container-code {
+  font-family: "Visitor2", monospace;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 650px;
+  padding: 20px;
+  border: 2px solid rgb(255, 255, 255);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  overflow-x: auto;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  font-family: "Press Start 2P", monospace !important;
+  font-size: 8px !important;
+  background: transparent !important;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.summary {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.summary h1 {
+  font-family: "Press Start 2P";
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+
+.summary p {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.container-summary {
+  font-family: "Visitor2", monospace;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 650px;
+  padding: 20px;
+  border: 2px solid rgb(255, 255, 255);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  overflow-x: auto;
+  text-align: center;
+}
+
+.container-summary p {
+  text-align: center;
+}
+
+.code-example h3 {
+  font-size: 1.6rem;
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  color: var(--cor-cinza);
+}
+
+.list-summary h2 {
+  text-align: center;
+  color: var(--cor-roxo);
+}
+
+.list-summary p {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.list-summary ul {
+  text-align: left;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.list-summary ul li {
+  text-align: left;
+  margin-left: 0;
+  font-size: 1.2rem;
+}
+
+.mini-container {
+  font-family: "Visitor2", monospace;
+  margin-top: 5px;
+  width: 300px;
+  border: 2px solid rgb(157, 53, 255);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  overflow-x: auto;
+  margin: 0 auto;
+  margin-bottom: 25px;
 }
 
 .footer {

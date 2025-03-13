@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   const container = document.getElementById("starsContainer");
-  const maxStars = 750;
+  const maxStars = 450;
 
   for (let i = 0; i < maxStars; i++) {
-    setTimeout(createStar, i * 10);
+    setTimeout(createStar, i * 50);
   }
 
   function createStar() {

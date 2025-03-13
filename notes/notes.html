@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HOME</title>
     <link rel="stylesheet" href="/notes/styles/notes.css" />
+
+    <!-- Prism.js -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
   </head>
   <body>
     <div class="bg" id="starsContainer"></div>
@@ -12,7 +20,7 @@
     <header class="header">
       <nav class="nav">
         <ul>
-          <li><a href="#">HOME</a></li>
+          <li><a href="../notes">HOME</a></li>
           <li><a href="/notes/notes.html">NOTES</a></li>
           <li><a href="../index.html">PORTFOLIO</a></li>
         </ul>
@@ -21,15 +29,114 @@
 
     <main>
       <div class="container-wrapper">
-        <div class="container">
+        <div class="container notes">
           <h1 class="title">
             ANOTAÇÕES DE ESTUDOS <br />
             (OU NÃO).
           </h1>
 
-          <div class="date">
+          <div class="post" id="operadores">
             <h1 class="date-post">Data: 13/03/2025</h1>
             <p class="post-title">OPERADORES, JAVA</p>
+            <div class="container-code">
+              <pre><code class="language-java">
+public class OperadoresJava {
+    public static void main(String[] args) {
+        // Operadores Aritméticos
+        int a = 10;
+        int b = 5;
+        System.out.println("Operadores Aritméticos:");
+        System.out.println("a + b = " + (a + b));
+        System.out.println("a - b = " + (a - b));
+        System.out.println("a * b = " + (a * b));
+        System.out.println("a / b = " + (a / b));
+        System.out.println("a % b = " + (a % b));
+
+        // Operadores de Atribuição
+        int c = 20;
+        c += 5; // c = c + 5
+        System.out.println("\nOperadores de Atribuição:");
+        System.out.println("c += 5: " + c);
+        c -= 3; // c = c - 3
+        System.out.println("c -= 3: " + c);
+
+        // Operadores de Comparação
+        System.out.println("\nOperadores de Comparação:");
+        System.out.println("a == b: " + (a == b));
+        System.out.println("a != b: " + (a != b));
+        System.out.println("a > b: " + (a > b));
+        System.out.println("a < b: " + (a < b));
+        System.out.println("a >= b: " + (a >= b));
+        System.out.println("a <= b: " + (a <= b));
+
+        // Operadores Lógicos
+        boolean x = true;
+        boolean y = false;
+        System.out.println("\nOperadores Lógicos:");
+        System.out.println("x && y: " + (x && y));
+        System.out.println("x || y: " + (x || y));
+        System.out.println("!x: " + !x);
+
+        // Operadores Unários
+        System.out.println("\nOperadores Unários:");
+        int z = 10;
+        System.out.println("++z: " + (++z)); // pré-incremento
+        System.out.println("z++: " + (z++)); // pós-incremento
+        System.out.println("z após pós-incremento: " + z);
+    }
+}
+              </code></pre>
+            </div>
+          </div>
+
+          <div class="summary">
+            <h1>Resumos</h1>
+            <div class="container-summary">
+              <p>
+                Os operadores em Java são usados para realizar operações em
+                variáveis e valores. Existem vários tipos de operadores, e cada
+                tipo serve para uma finalidade específica. A seguir, explicamos
+                os principais operadores:
+              </p>
+
+              <div class="list">
+                <div class="list-summary">
+                  <h2>1. Operadores Aritméticos</h2>
+                  <p>Estes operadores realizam operações matemáticas:</p>
+                  <ul>
+                    <li>+ : Soma</li>
+                    <li>- : Subtração</li>
+                    <li>* : Multiplicação</li>
+                    <li>/ : Divisão</li>
+                    <li>% : Módulo (resto da divisão)</li>
+                  </ul>
+                </div>
+
+                <div class="code-example">
+                  <h3>Exemplo</h3>
+                  <div class="mini-container">
+                    <pre><code class="language-java">
+int a = 10;
+int b = 5;
+int soma = a + b; // soma = 15
+                    </code></pre>
+                  </div>
+                </div>
+
+                <div class="list-summary">
+                  <h2>2. Operadores de Atribuição</h2>
+                  <p>Usados para atribuir valores a variáveis:</p>
+                  <ul>
+                    <li>= : Atribuição simples</li>
+                    <li>+= : Atribuição com soma</li>
+                    <li>-= : Atribuição com subtração</li>
+                    <li>*= : Atribuição com multiplicação</li>
+                    <li>/= : Atribuição com divisão</li>
+                    <li>%= : Atribuição com módulo</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
 
           <footer class="footer">
