@@ -104,11 +104,8 @@ body {
 
 .nav ul {
   display: flex;
-  gap: 50px;
-}
-
-.nav ul li {
-  list-style: none;
+  gap: 80px;
+  margin-left: 3.3rem;
 }
 
 .nav ul li a {
@@ -136,11 +133,11 @@ body {
 }
 
 .container h1 {
-  font-size: 1.8rem;
+  font-size: 2.8rem;
   margin-bottom: 20px;
   color: var(--cor-roxo);
   font-family: "visitor2";
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .container p {
@@ -153,111 +150,27 @@ body {
   line-height: normal;
 }
 
-.about {
+.date {
   margin-top: 6rem;
 }
 
-.about h1 {
+.date h1 {
   font-size: 1.9rem;
-  font-family: "Press Start 2P";
-  color: var(--cor-roxo);
+  font-family: "visitor2";
+  color: var(--cor-cinza);
+  text-align: left;
+  font-weight: 400;
 }
 
-.about p {
-  text-align: center;
-  font-size: 1.6rem;
-  margin-bottom: 20px;
+.date p {
+  text-align: left;
+  font-size: 2.3rem;
+  margin-top: -15px;
   color: var(--cor-cinza-claro);
   font-family: "visitor2";
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-}
-
-.babidi {
-  color: var(--cor-roxo);
-  transition: color 0.3s ease;
-}
-
-.babidi:hover {
-  color: var(--cor-roxo-escuro);
-}
-
-.babisite {
-  color: var(--cor-roxo);
-  transition: color 0.3s ease;
-}
-
-.babisite:hover {
-  color: var(--cor-roxo-escuro);
-}
-
-.recent {
-  margin-top: 4rem;
-  text-align: center;
-}
-
-.recent h1 {
-  font-size: 1.9rem;
-  font-family: "Press Start 2P";
-  color: var(--cor-roxo);
-  margin-bottom: 2rem;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(2, 0.4fr);
-  gap: 30px;
-  justify-content: center;
-  justify-items: center;
-}
-
-.card {
-  position: relative;
-  width: 168px;
-  height: 150px;
-  border-radius: 10px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.card .text-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background: white;
-  text-align: center;
-  padding: 12px 0;
-  transition: background 0.3s ease;
-}
-
-.card:hover .text-footer {
-  background: var(--cor-roxo);
-}
-
-.card .text-footer p {
-  font-size: 1rem;
-  color: var(--cor-preto);
-  margin: 0;
-  transition: color 0.3s ease;
-  font-family: "visitor2";
-  font-weight: 400;
-}
-
-.card:hover .text-footer p {
-  color: white;
 }
 
 .footer {
