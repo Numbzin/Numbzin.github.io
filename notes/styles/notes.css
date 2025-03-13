@@ -1,0 +1,288 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@font-face {
+  font-family: "visitor2";
+  src: url(../fonts/visitor2.ttf);
+}
+
+:root {
+  --cor-preto: #000000;
+  --cor-roxo: #8a2be2;
+  --cor-roxo-escuro: #4b0082;
+  --cor-cinza-claro: #d3d3d3;
+  --cor-cinza: #808080;
+  --cor-cinza-escuro: #1b1b1b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  background-color: var(--cor-preto);
+  color: var(--cor-cinza-claro);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Press Start 2P", monospace;
+  padding: 20px;
+}
+
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  background: rgba(138, 43, 226, 0.7);
+  border-radius: 50%;
+  filter: blur(1px);
+  animation: twinkle 5s infinite, fadeIn 2s ease-in-out, trail 2s infinite;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes trail {
+  0% {
+    transform: translateX(0) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100px) translateY(100px);
+    opacity: 0;
+  }
+}
+
+.nav {
+  display: flex;
+  width: 546px;
+  height: 49px;
+  padding: 10px 25px;
+  justify-content: center;
+  align-items: center;
+  background: #1b1b1b;
+  flex-shrink: 0;
+}
+
+.header {
+  display: flex;
+  width: 676px;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  background: #1b1b1b;
+}
+
+.nav ul {
+  display: flex;
+  gap: 50px;
+}
+
+.nav ul li {
+  list-style: none;
+}
+
+.nav ul li a {
+  color: var(--cor-cinza-claro);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav ul li a:hover {
+  color: var(--cor-roxo);
+  transform: scale(1.1);
+}
+
+.container {
+  margin-top: 20px;
+  width: 650px;
+  max-width: 700px;
+  padding: 30px;
+  border: 2px solid rgb(255, 255, 255);
+  text-align: center;
+  background: rgba(92, 92, 92, 0.089);
+  backdrop-filter: blur(2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container h1 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: var(--cor-roxo);
+  font-family: "visitor2";
+  font-weight: 400;
+}
+
+.container p {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: var(--cor-cinza-claro);
+  font-family: "visitor2";
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.about {
+  margin-top: 6rem;
+}
+
+.about h1 {
+  font-size: 1.9rem;
+  font-family: "Press Start 2P";
+  color: var(--cor-roxo);
+}
+
+.about p {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: var(--cor-cinza-claro);
+  font-family: "visitor2";
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.babidi {
+  color: var(--cor-roxo);
+  transition: color 0.3s ease;
+}
+
+.babidi:hover {
+  color: var(--cor-roxo-escuro);
+}
+
+.babisite {
+  color: var(--cor-roxo);
+  transition: color 0.3s ease;
+}
+
+.babisite:hover {
+  color: var(--cor-roxo-escuro);
+}
+
+.recent {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.recent h1 {
+  font-size: 1.9rem;
+  font-family: "Press Start 2P";
+  color: var(--cor-roxo);
+  margin-bottom: 2rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 0.4fr);
+  gap: 30px;
+  justify-content: center;
+  justify-items: center;
+}
+
+.card {
+  position: relative;
+  width: 168px;
+  height: 150px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card .text-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: white;
+  text-align: center;
+  padding: 12px 0;
+  transition: background 0.3s ease;
+}
+
+.card:hover .text-footer {
+  background: var(--cor-roxo);
+}
+
+.card .text-footer p {
+  font-size: 1rem;
+  color: var(--cor-preto);
+  margin: 0;
+  transition: color 0.3s ease;
+  font-family: "visitor2";
+  font-weight: 400;
+}
+
+.card:hover .text-footer p {
+  color: white;
+}
+
+.footer {
+  width: 100%;
+  color: var(--cor-cinza-claro);
+  text-align: center;
+  margin-top: 45px;
+  margin-bottom: -15px;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.footer a {
+  color: var(--cor-roxo);
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: var(--cor-roxo-escuro);
+}
+
+.heart {
+  color: red;
+  font-size: 0.8rem;
+}
