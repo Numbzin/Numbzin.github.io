@@ -29,7 +29,7 @@
 
     <main>
       <div class="container-wrapper">
-        <div class="container notes">
+        <div class="container">
           <h1 class="title">
             ANOTAÇÕES DE ESTUDOS <br />
             (OU NÃO).
@@ -89,52 +89,522 @@ public class OperadoresJava {
             </div>
           </div>
 
-          <div class="summary">
-            <h1>Resumos</h1>
-            <div class="container-summary">
-              <p>
-                Os operadores em Java são usados para realizar operações em
-                variáveis e valores. Existem vários tipos de operadores, e cada
-                tipo serve para uma finalidade específica. A seguir, explicamos
-                os principais operadores:
-              </p>
+          <div class="post" id="solo-leveling">
+            <h1 class="date-post">Data: 14/03/2025</h1>
+            <p class="post-title">
+              Criando um RPG em Java <br />Inspirado em Solo Leveling!!
+            </p>
 
-              <div class="list">
-                <div class="list-summary">
-                  <h2>1. Operadores Aritméticos</h2>
-                  <p>Estes operadores realizam operações matemáticas:</p>
-                  <ul>
-                    <li>+ : Soma</li>
-                    <li>- : Subtração</li>
-                    <li>* : Multiplicação</li>
-                    <li>/ : Divisão</li>
-                    <li>% : Módulo (resto da divisão)</li>
-                  </ul>
+            <div class="container-code">
+              <div class="introduction-container">
+                <h2 class="introduction">Introdução</h2>
+                <div class="introduction-text">
+                  <p>
+                    Em <span>Solo Leveling</span>, Sung Jin-Woo começa como o
+                    caçador mais fraco de todos kkkkjj (conhecido como o caçador
+                    mais fraco da humanidade.. sera mesmo?), mas tudo muda
+                    quando ele recebe uma segunda chance,
+                    <span>UM SISTEMA..</span> e esse sistema permite que ele
+                    evolua sem limites <span>(o cara é foda patroa)</span> e
+                    isso é muito a cara de <span>RPG</span>, não concorda?
+                    porque em RPG'S, os personagens tambem podem
+                    <span>subir de nível, ganhar habilidades</span> (dependendo
+                    do rpg) e <span>ficarem mais fortes.</span> Dito isso, hoje
+                    vamos recriar parte desse sistema de solo leveling em
+                    <span>JAVA</span> (medo kkkj)
+                    <span>explicando cada conceito</span> e sua relação com a
+                    jornada do nosso menino Sung.
+                  </p>
                 </div>
+                <div class="image">
+                  <img src="./images/sung.png" alt="Sung Jin-Woo" />
+                </div>
+              </div>
+
+              <div class="explanation-container">
+                <h2 class="explanation-title">
+                  Criando um sistema de RPG em Java
+                </h2>
+                <h3 class="explanation-subtitle">
+                  Primeiro vamos criar uma classe, e essa classe vai se chamar
+                  <span>Hunter</span>
+                </h3>
+                <p>
+                  Em Solo Leveling, nosso menino Sung possui
+                  <span>atributos</span> como força, agilidade, vitalidade, etc.
+                  Vamos representar isso com uma <span>classe</span> (e você já
+                  sabe o nome, esquece não, é Hunter) e toda classe precisa de
+                  um <span>construtor</span>.
+                </p>
 
                 <div class="code-example">
-                  <h3>Exemplo</h3>
-                  <div class="mini-container">
+                  <h3>Hunter class</h3>
+                  <div class="mid-container">
                     <pre><code class="language-java">
-int a = 10;
-int b = 5;
-int soma = a + b; // soma = 15
+import java.util.Random;
+import java.util.Scanner;
+
+public class Hunter {
+    private String nome;
+    private int nivel;
+    private int experiencia;
+    private int forca;
+    private int agilidade;
+    private int vitalidade;
+
+    // Construtor da classe
+    public Hunter(String nome) {
+        this.nome = "Sung Jin-Woo"; // poderia ser qualquer um
+        this.nivel = 1;
+        this.experiencia = 0;
+        this.forca = 10;
+        this.agilidade = 10;
+        this.vitalidade = 10;
+    }
+}
                     </code></pre>
                   </div>
                 </div>
 
-                <div class="list-summary">
-                  <h2>2. Operadores de Atribuição</h2>
-                  <p>Usados para atribuir valores a variáveis:</p>
-                  <ul>
-                    <li>= : Atribuição simples</li>
-                    <li>+= : Atribuição com soma</li>
-                    <li>-= : Atribuição com subtração</li>
-                    <li>*= : Atribuição com multiplicação</li>
-                    <li>/= : Atribuição com divisão</li>
-                    <li>%= : Atribuição com módulo</li>
-                  </ul>
+                <p>
+                  Aqui criamos a <span>classe Hunter</span>, que
+                  <span>representa</span> nosso menino Sung (caçador). Definimos
+                  os <span>atributos</span> principais
+                  <span>(nome, nível, experiência)</span> e os 3 (três)
+                  <span>atributos</span> essenciais
+                  <span>(força, agilidade e vitalidade)</span>. O
+                  <span>construtor</span> inicializa esses <span>valores</span>,
+                  simulando nosso menino Sung começando sua jornada.
+                </p>
+
+                <p>
+                  Agora, vamos criar um <span>método</span> para ganhar XP e
+                  verificar se nosso menino Sung sobe de nível.
+                </p>
+
+                <div class="code-example">
+                  <h3>ganharExperiencia method</h3>
+                  <div class="mid-container">
+                    <pre><code class="language-java">
+public void ganharExperiencia(int xp) {
+    this.experiencia += xp;
+    System.out.println(nome + " ganhou " + xp + " XP!");
+    verificarLevelUp();
+}
+                    </code></pre>
+                  </div>
+                  <p>
+                    Esse <span>método</span> adiciona XP ao Sung (caçador) e
+                    chama o método <span>verificarLevelUp()</span> que ainda
+                    vamos criar para ver se ele pode subir de nível.
+                  </p>
                 </div>
+
+                <h2 class="explanation-subtitle">
+                  Vamos criar o <span>método</span> para verificar se o Sung
+                  pode <span>subir de nível</span>.
+                </h2>
+
+                <div class="code-example">
+                  <h3>verificarLevelUp method</h3>
+                  <div class="mid-container">
+                    <pre><code class="language-java">
+private void verificarLevelUp() {
+    // Fórmula simples para subir de nível
+    if (experiencia >= nivel * 10) {
+        experiencia -= nivel * 10;
+        nivel++;
+        forca += 5;
+        agilidade += 3;
+        vitalidade += 4;
+        System.out.println(nome + 
+        " subiu para o nível " + nivel + "!");
+    }
+}
+                    </code></pre>
+                  </div>
+                  <p>
+                    Sempre que o jogador (Sung) <span>acumular</span> XP
+                    suficiente, ele vai <span>subir de nível</span>, melhorando
+                    seus <span>atributos</span>. A fórmula
+                    <span>nivel * 10</span> define a quantidade de XP necessária
+                    para evoluir.
+                  </p>
+                </div>
+
+                <h2 class="explanation-subtitle">
+                  Agora, vamos criar um método para exibir os atributos.
+                </h2>
+
+                <div class="code-example">
+                  <h3>mostrarStatus method</h3>
+                  <div class="mid-container">
+                    <pre><code class="language-java">
+public void mostrarStatus() {
+    System.out.println("\nStatus de " + nome + ":");
+    System.out.println("Nível: " + nivel);
+    System.out.println("Força: " + forca);
+    System.out.println("Agilidade: " + agilidade);
+    System.out.println("Vitalidade: " + vitalidade);
+}
+                    </code></pre>
+                  </div>
+                  <p>
+                    O que ele faz é nada mais, nada menos do que mostrar os
+                    atributos atuais do Sung (jogador) na tela.
+                  </p>
+                </div>
+
+                <h2 class="explanation-subtitle">
+                  Agora, vamos simular a batalha contra um monstro.
+                </h2>
+
+                <div class="code-example">
+                  <h3>lutar method</h3>
+                  <div class="mid-container">
+                    <pre><code class="language-java">
+public void lutar(Monstro monstro) {
+    System.out.println(nome + 
+    " entrou em combate contra " + monstro.getNome() + "!");
+    Random random = new Random();
+    Scanner scanner = new Scanner(System.in);
+}
+                    </code></pre>
+                  </div>
+                  <p>
+                    Aqui nós criamos o <span>método lutar()</span>, que recebe
+                    um monstro como <span>parâmetro</span>. O
+                    <span>Random</span> (aleatório) ajuda a
+                    <span>gerar valores aleatórios</span> (não me diga kkkkkj)
+                    para ataques, e o <span>Scanner</span> é para que você
+                    decida a ação a ser tomada.
+                  </p>
+                </div>
+
+                <h2 class="explanation-subtitle">vamos continuar o código</h2>
+
+                <div class="code-example">
+                  <h3>WHILE (lutar method)</h3>
+                  <h4>você pode copiar o código (arrume as aspas "")</h4>
+                  <div class="mid-container">
+                    <pre><code class="language-java">
+while (this.vitalidade > 0 && monstro.getVida() > 0) {
+            System.out.println("Escolha sua ação: 
+            1- Atacar, 
+            2- Defender, 
+            3- Esquivar");
+            int escolha = scanner.nextInt();
+            int danoCausado = 0;
+            int danoRecebido = random.nextInt
+            (monstro.getForca());
+                    </code></pre>
+                  </div>
+                  <p>
+                    Aqui criamos um <span>loop while</span>, ele continua
+                    rodando até que o jogador ou o monstro fiquem sem vida.
+                    Pedimos pro jogador (usuário) escolher uma ação e
+                    <span>geramos um valor aleatório de dano recebido :(</span>
+                  </p>
+                </div>
+
+                <h2 class="explanation-subtitle">
+                  Vou te explicar cada partezinha, se liga
+                </h2>
+
+                <div class="code-example">
+                  <h3>if (lutar method)</h3>
+
+                  <div class="mid-container">
+                    <pre><code class="language-java">
+if (escolha == 1) { // Atacar
+                danoCausado = random.nextInt(forca);
+                monstro.receberDano(danoCausado);
+                System.out.println(nome + " 
+                atacou e causou " + 
+                danoCausado + " de dano!");
+            }
+                    </code></pre>
+                  </div>
+                  <p>
+                    <span>Se o jogador escolher atacar (1)</span>, calculamos um
+                    <span>dano random</span>, baseado em sua força e aplicamos
+                    ao desgraçadin <span>(monstro)</span>.
+                  </p>
+                </div>
+
+                <div class="code-example">
+                  <h3>else if (lutar method)</h3>
+
+                  <div class="mid-container">
+                    <pre><code class="language-java">
+else if (escolha == 2) { // Defender
+                danoRecebido /= 2;
+                System.out.println(nome + " 
+                defendeu e reduziu o dano para " 
+                + danoRecebido + "!");
+            }
+                    </code></pre>
+                  </div>
+                  <p>
+                    <span>Se o jogador escolher defender (2)</span>, reduzimos o
+                    <span>dano</span>, pela metade.
+                  </p>
+                </div>
+
+                <div class="code-example">
+                  <h3>else if (lutar method)</h3>
+
+                  <div class="mid-container">
+                    <pre><code class="language-java">
+else if (escolha == 3) { // Esquivar
+                if (random.nextInt(100) < agilidade * 2) {
+                    danoRecebido = 0;
+                    System.out.println(nome 
+                    + " esquivou do ataque!");
+                } else {
+                    System.out.println(nome 
+                    + " tentou esquivar, mas foi atingido!");
+                }
+            }
+                    </code></pre>
+                  </div>
+                  <p>
+                    Se o jogador tentar <span>esquivar (3)</span>, verificamos
+                    <span>randomicante</span> se ele tem sucesso, isso com base
+                    em sua <span>agilidade</span>.
+                  </p>
+                </div>
+
+                <h2 class="explanation-subtitle">
+                  Seguindo nosso desenvolvimento, precisamos mostrar quanto de
+                  dano recebemos se der errado, certo?
+                </h2>
+
+                <div class="code-example">
+                  <h3>Checar dano recebido</h3>
+                  <div class="mid-container">
+                    <pre><code class="language-java">
+this.vitalidade -= danoRecebido;
+            System.out.println(monstro.getNome() + " causou " 
+            + danoRecebido 
+            + " de dano!");
+        }
+                    </code></pre>
+                  </div>
+                  <p>
+                    Depois da <span>ação</span> do jogador, aplicamos o
+                    <span>dano</span> ao nosso personagem e seguimos o combate.
+                  </p>
+                </div>
+
+                <h2>
+                  Agora precisamos mostrar se derrotamos o monstro, ou se ele
+                  nos derrotou xD.
+                </h2>
+
+                <div class="code-example">
+                  <h3>Checar derrota ou vitoria</h3>
+                  <div class="mid-container">
+                    <pre><code class="language-java">
+if (this.vitalidade > 0) {
+            System.out.println(nome 
+            + " derrotou " + monstro.getNome() + "!");
+            ganharExperiencia(10);
+        } else {
+            System.out.println(nome 
+            + " foi derrotado por " 
+            + monstro.getNome() + "...");
+        }
+    }
+}
+                    </code></pre>
+                  </div>
+                  <p>
+                    E assim, <span>no final da batalha</span>, verificamos quem
+                    venceu. Se nosso menino sung <span>sobreviver</span>, ele
+                    ganha XP. Se for <span>derrotado</span>, o jogo termina (o
+                    que convenhamos, é impossivel o menino sung ser derrotado..
+                    eu acho kkkkk)
+                  </p>
+                </div>
+
+                <h2 class="explanation-subtitle">Criando a Classe Monstro</h2>
+
+                <h3>
+                  Bom, nosso menino Sung precisa de inimigos pra enfrentar né?
+                  (xD se não, não tem graça). Então vamos criar a classe Monstro
+                  para representar os adversários que ele vai encontrar nas
+                  dungeons!
+                </h3>
+
+                <div class="code-example">
+                  <h3>Class monstro</h3>
+                  <div class="mid-container">
+                    <pre><code class="language-java">
+import java.util.Random;
+
+public class Monstro {
+    private String nome;
+    private int nivel;
+    private int vida;
+    private int forca;
+    
+    // Construtor da classe
+    public Monstro(String nome, int nivel) {
+        this.nome = nome;
+        this.nivel = nivel;
+        this.vida = nivel * 15; // Vida baseada no nível
+        this.forca = nivel * 3; // Força baseada no nível
+    }
+}
+                    </code></pre>
+                  </div>
+                  <p>
+                    Aqui criamos a <span>classe</span> Monstro com os
+                    <span>atributos</span>
+                    básicos: <span>nome, nível, vida e força</span>. O
+                    <span>construtor</span> define a vida e força com base no
+                    nível do <span>monstro</span> (quanto maior o nível, mais
+                    forte é o desgraçadinho xD). Em <span>Solo Leveling</span>,
+                    as criaturas das dungeons variam muito em poder, então esse
+                    <span>sistema</span> permite criar monstros de diferentes
+                    níveis de dificuldade.
+                  </p>
+                </div>
+
+                <h2 class="explanation-subtitle">
+                  Agora precisamos implementar os métodos que vão permitir a
+                  interação com o caçador (Hunter):
+                </h2>
+
+                <div class="code-example">
+                  <h3>Getters</h3>
+                  <div class="mid-container">
+                    <pre><code class="language-java">
+// Getters necessários para a interação com a classe Hunter
+    public String getNome() {
+        return nome;
+    }
+    
+    public int getVida() {
+        return vida;
+    }
+    
+    public int getForca() {
+        return forca;
+    }
+                    </code></pre>
+                  </div>
+                  <p>
+                    Esses <span>métodos</span> "getters" permitem que a
+                    <span>classe Hunter</span> acesse os
+                    <span>valores dos atributos</span>
+                    do <span>monstro</span>. Isso é necessário para que nosso
+                    menino Sung saiba o nome do monstro que está enfrentando,
+                    quanto de vida ele tem e qual é a força dele
+                    <span>(pra calcular o dano)</span>.
+                  </p>
+                </div>
+
+                <h2>
+                  E claro, precisamos de um método para aplicar dano ao monstro
+                  quando o Sung atacar.
+                </h2>
+
+                <div class="code-example">
+                  <h3>receber dano</h3>
+                  <div class="mid-container">
+                    <pre><code class="language-java">
+// Método para receber dano
+    public void receberDano(int dano) {
+        this.vida -= dano;
+        if (this.vida < 0) {
+            this.vida = 0;
+        }
+    }
+                    </code></pre>
+                  </div>
+                  <p>
+                    Esse <span>método</span> reduz a <span>vida</span> do
+                    monstro quando ele recebe dano. Também
+                    <span>verificamos</span> se a vida ficou negativa, pq seria
+                    estranho um monstro com vida abaixo de zero né? kkkj (mesmo
+                    que o sung seja forte o suficiente pra causar esse dano)
+                  </p>
+                </div>
+
+                <h2>
+                  Por fim, vamos adicionar um método para mostrar o status do
+                  monstro, assim como fizemos para o Hunter.
+                </h2>
+
+                <div class="code-example">
+                  <h3>mostrar status</h3>
+                  <div class="mid-container">
+                    <pre><code class="language-java">
+// Método para mostrar status do monstro
+    public void mostrarStatus() {
+        System.out.println("\nStatus de " + nome + ":");
+        System.out.println("Nível: " + nivel);
+        System.out.println("Vida: " + vida);
+        System.out.println("Força: " + forca);
+    }
+}
+                    </code></pre>
+                  </div>
+                  <p>
+                    E assim podemos ver as <span>informações</span> do monstro
+                    na tela. Útil pra saber se vale a pena
+                    <span>enfrentar</span> aquele <span>monstro</span> ou se é
+                    melhor correr!
+                    <span
+                      >(nosso menino é corajoso, mas no início ele precisa saber
+                      escolher suas batalhas)</span
+                    >.
+                  </p>
+                </div>
+
+                <h2>Testando o Sistema</h2>
+                <h3>
+                  Agora que temos as classes Hunter e Monstro, podemos criar uma
+                  classe principal com o método main() para testar nosso
+                  sistema.
+                </h3>
+
+                <div class="code-example">
+                  <h3>main</h3>
+                  <div class="mid-container">
+                    <pre><code class="language-java">
+public class SoloLeveling {
+    public static void main(String[] args) {
+        // Criando nosso caçador Sung Jin-Woo
+        Hunter sung = new Hunter();
+        sung.mostrarStatus();
+        
+        // Criando um monstro para ele enfrentar
+        Monstro goblin = new Monstro("Goblin", 1);
+        goblin.mostrarStatus();
+        
+        // Iniciando a batalha!
+        sung.lutar(goblin);
+    }
+}
+                    </code></pre>
+                  </div>
+                  <p>
+                    Com isso, podemos <span>testar</span> o
+                    <span
+                      >sistema básico de RPG inspirado em Solo Leveling!</span
+                    >
+                    O Sung começa fraco (como no anime/manhwa), mas com cada
+                    batalha ele fica mais forte. E se você quiser
+                    <span>adicionar</span> mais mecânicas como
+                    <span>habilidades especiais ou itens</span>, pode expandir
+                    essas classes. <span>Boa sorte!</span>
+                  </p>
+                </div>
+
+                <h2>Erga-se, caçador! Sua jornada está apenas começando.</h2>
               </div>
             </div>
           </div>
