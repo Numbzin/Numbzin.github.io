@@ -203,6 +203,8 @@ pre[class*="language-"] {
   font-family: var(--font-press-start);
   font-size: 1.6rem;
   text-transform: uppercase;
+  text-align: center;
+  color: var(--cor-roxo-escuro);
 }
 
 .summary p {
