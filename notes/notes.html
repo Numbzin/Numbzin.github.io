@@ -554,14 +554,19 @@ this.vitalidade -= danoRecebido;
                   <h3>Checar derrota ou vitoria</h3>
                   <div class="mid-container">
                     <pre><code class="language-java">
-if (this.vitalidade > 0) {
-            System.out.println(nome 
-            + " derrotou " + monstro.getNome() + "!");
-            ganharExperiencia(10);
-        } else {
-            System.out.println(nome 
-            + " foi derrotado por " 
-            + monstro.getNome() + "...");
+            if (this.vitalidade > 0) {
+                System.out.println(nome 
+                + " derrotou " + monstro.getNome() + "!");
+                ganharExperiencia(10);
+            } else {
+                System.out.println(nome 
+                + " foi derrotado por " 
+                + monstro.getNome() + "...");
+            }
+        } finally {
+          // Fechando o scanner
+          // (boa prática) 
+            scanner.close(); 
         }
     }
 }
@@ -589,7 +594,6 @@ if (this.vitalidade > 0) {
                   <h3>Class monstro</h3>
                   <div class="mid-container">
                     <pre><code class="language-java">
-import java.util.Random;
 
 public class Monstro {
     private String nome;
