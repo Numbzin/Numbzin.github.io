@@ -509,6 +509,10 @@ pre[class*="language-"] {
     margin-top: 20px;
     clear: both;
   }
+
+  .bg {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -639,6 +643,10 @@ pre[class*="language-"] {
   .footer p {
     font-size: 0.9rem;
   }
+
+  .bg {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 320px) {
@@ -700,5 +708,9 @@ pre[class*="language-"] {
 
   .list-summary ul li {
     font-size: 0.9rem;
+  }
+
+  .bg {
+    display: none;
   }
 }
